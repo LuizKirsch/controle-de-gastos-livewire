@@ -20,22 +20,17 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        // Validação dos dados de login
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
 
-        // Tenta autenticar o usuário
         if (Auth::attempt($request->only('email', 'password'))) {
-            // Regenera a sessão para segurança
             $request->session()->regenerate();
 
-            // Redireciona para a rota originalmente solicitada ou para a home
             return redirect()->intended(route('home'));
         }
 
-        // Retorna ao formulário com mensagem de erro
         return back()->withErrors([
             'email' => 'As credenciais fornecidas estão incorretas.',
         ])->onlyInput('email');
@@ -46,14 +41,11 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        // Faz o logout do usuário
         Auth::logout();
 
-        // Invalida a sessão
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        // Redireciona para a página de login
         return redirect()->route('login');
     }
 }
