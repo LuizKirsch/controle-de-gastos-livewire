@@ -38,8 +38,8 @@
 
             <!-- Desktop Menu -->
             <div class="hidden lg:flex space-x-6">
-                <a href="/" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Início</a>
-                <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Sobre</a>
+                <a href="{{route('home')}}" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Início</a>
+                <a href="{{route('expenses')}}" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Gastos</a>
                 <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Serviços</a>
                 <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Contato</a>
             </div>
@@ -48,8 +48,8 @@
         <!-- Mobile Menu (hidden by default) -->
         <div id="mobile-menu" class="lg:hidden hidden">
             <div class="flex flex-col space-y-4 p-4">
-                <a href="/" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Início</a>
-                <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Sobre</a>
+                <a href="{{route('home')}}" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Início</a>
+                <a href="{{route('expenses')}}" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Gastos</a>
                 <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Serviços</a>
                 <a href="#" class="text-white hover:bg-blue-700 px-4 py-2 rounded-md">Contato</a>
             </div>
