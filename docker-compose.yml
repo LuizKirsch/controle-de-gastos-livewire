@@ -1,6 +1,6 @@
 services:
   db:
-    container_name: db  # Nome do container (opcional)
+    container_name: db_controle_gastos  # Nome do container (opcional)
     image: mysql:latest  # Imagem do MySQL
     ports:
       - "3309:3306"  # Mapeamento de portas
@@ -12,7 +12,7 @@ services:
       - project-network  # Rede compartilhada
 
   app:
-    container_name: app
+    container_name: app_controle_gastos
     build:
       context: .  # Contexto de build
       dockerfile: laravel.Dockerfile  # Dockerfile
@@ -30,7 +30,7 @@ services:
       - project-network  # Rede compartilhada
 
   webserver:
-    container_name: webserver
+    container_name: webserver_controle_gastos
     image: nginx:alpine  # Imagem do Nginx
     volumes:
       - .:/var/www/html
